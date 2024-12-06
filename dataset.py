@@ -71,11 +71,9 @@ class MyDataset(Dataset):
         img_gt = img_gt[random_w:random_w+256,random_h:random_h+256]
         img_src = img_src[random_w:random_w+256,random_h:random_h+256]
         
-        # changed by sxy
-        # BGR to RGB conversion
+        #add
         img_gt = cv2.cvtColor(img_gt, cv2.COLOR_BGR2RGB)
         img_src = cv2.cvtColor(img_src, cv2.COLOR_BGR2RGB)
-        # changed by sxy
         
         img_gt=torch.from_numpy(img_gt).permute(2,0,1)
         img_src=torch.from_numpy(img_src).permute(2,0,1)
